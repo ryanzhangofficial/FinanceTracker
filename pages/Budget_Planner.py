@@ -9,11 +9,9 @@ feedback_form()
 st.title("💸 Budget Planner")
 st.markdown("Plan your budget across different categories.")
 
-# Load budgets DataFrame from CSV
 if 'budgets' not in st.session_state:
     st.session_state['budgets'] = load_data('budgets.csv', ['Category', 'Allocated'])
 
-# Add Budget Category
 with st.form("Add Budget Category"):
     category = st.text_input("Category")
     allocated = st.number_input("Allocated Amount ($)", min_value=0.0, step=10.0)
@@ -25,7 +23,6 @@ if submitted:
     save_data(st.session_state['budgets'], 'budgets.csv')
     st.success("Budget category added!")
 
-# Display Budgets
 st.subheader("Your Budget Plan")
 if not st.session_state['budgets'].empty:
     st.dataframe(st.session_state['budgets'])

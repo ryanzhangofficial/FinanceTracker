@@ -71,7 +71,7 @@ def main():
     if st.session_state.show_definition:
         st.markdown(f"<div class='definition'>{current_flashcard['definition']}</div>", unsafe_allow_html=True)
 
-    col1, col2, col3 = st.columns([2, 2.5, .5])
+    col1, col2, col3 = st.columns([2, 3, 1.5])
 
     with col1:
         if st.button("Previous"):

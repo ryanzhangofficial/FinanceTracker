@@ -10,7 +10,6 @@ feedback_form()
 st.title("🧾 Expense Tracker")
 st.markdown("Log your expenses and track where your money goes.")
 
-# Load expenses DataFrame from CSV
 if 'expenses' not in st.session_state:
     st.session_state['expenses'] = load_data('expenses.csv', ['Date', 'Category', 'Amount', 'Description'])
 
@@ -29,7 +28,6 @@ if submitted:
     st.success("Expense added!")
     st.session_state['total_expenses'] = st.session_state['expenses']['Amount'].sum()
 
-# Display Expenses
 st.subheader("Your Expenses")
 if not st.session_state['expenses'].empty:
     st.dataframe(st.session_state['expenses'])
