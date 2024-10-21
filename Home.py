@@ -8,7 +8,7 @@ from datetime import datetime
 
 feedback_form()
 
-st.title("📊 Dashboard")
+st.title("📊 NUFI Dashboard")
 st.markdown("Overview of your financial status.")
 
 if 'budgets' not in st.session_state:
